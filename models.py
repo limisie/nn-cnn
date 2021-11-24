@@ -18,12 +18,8 @@ class FullyConnected(nn.Module):
 
     def forward(self, x):
         x = x.view(-1, self.input_size)
-        # print(x.shape)
         x = self.fc1(x)
-        # print(x.shape)
         x = self.fc2(x)
-        # print(x.shape)
-        # print(x)
         return x
 
 
@@ -47,13 +43,7 @@ class CNN(nn.Module):
         self.accuracies = {'train': [], 'test': []}
 
     def forward(self, x):
-        # print(x.shape)
         x = self.conv(x)
-        # print(x.shape)
         x = x.view(x.size(0), -1)
-        # print(x.shape)
         x = self.classifier(x)
-        # print(x.shape)
         return x
-
-# [(W − K + 2P) / S] + 1
